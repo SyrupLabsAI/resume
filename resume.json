@@ -6,7 +6,7 @@
     "email": "alanjacobkarp@gmail.com",
     "phone": "443-841-9131",
     "url": "https://syrp.ai",
-    "summary": "Enterprise transformation and post-merger integration leader with 9+ years driving operational outcomes across PE-backed industrial platforms, manufacturing, and AI-enabled business systems. Core experience: ERP/MRP integration (SyteLine, SAP S/4HANA, QAD), enterprise reporting governance, CRM and MarTech enablement (Salesforce, Hybris, GA4), and program delivery across acquisitions totaling $800M+. Applied AI directly: deployed AI-assisted knowledge management in Confluence and built agentic automation systems through Syrup Labs AI. MBA, Villanova (Strategy, Analytics, AI/ML). B.S. Chemical Engineering, UMBC. APICS CSCP. Open to remote/hybrid Director or Sr. Manager roles in enterprise transformation, business operations, AI operations, or program leadership.",
+    "summary": "Transformation and integration leader with a background spanning manufacturing, enterprise systems, analytics, and AI automation. Founded Syrup Labs AI (syrp.ai) to translate operational experience into applied AI, delivering agentic concierge systems, lead capture workflows, and automation infrastructure for small and local businesses across retail, hospitality, and local services. Previously at DwyerOmega, drove cross-functional execution across ERP/MRP, AMS, CRM/MarTech, and enterprise reporting through six acquisitions ($800M+), while implementing AI-enabled knowledge management to improve governance at scale. B.S. Chemical Engineering (UMBC) and MBA (Villanova: Strategy, Analytics, AI/ML). Strong in ambiguous environments requiring structure, stakeholder alignment, technical problem solving, and follow-through.",
     "location": {
       "city": "Chadds Ford",
       "region": "PA",
@@ -18,51 +18,59 @@
         "network": "LinkedIn",
         "username": "alanjkarp",
         "url": "https://linkedin.com/in/alanjkarp"
+      },
+      {
+        "network": "Website",
+        "username": "syrp.ai",
+        "url": "https://syrp.ai"
       }
     ]
   },
   "work": [
     {
-      "name": "Syrup Labs AI",
-      "position": "AI Automation Consultant",
+      "name": "Syrup Labs AI (syrp.ai)",
+      "position": "Founder & AI Automation Consultant",
       "url": "https://syrp.ai",
       "startDate": "2026-02",
       "location": "Chadds Ford, PA",
+      "summary": "AI automation consultancy building and deploying agentic systems, lead capture workflows, and customer support automation for small and local businesses; three active commercial clients across retail, hospitality, and local services.",
       "highlights": [
-        "Designed and deployed AI concierge and intake systems for active clients including website assistants, event signup flows, and structured inquiry routing; clients gained first-ever lead tracking and automated follow-up.",
-        "Built parent/subagent architectures with prompt guardrails, FAQ handling, escalation logic, and intent separation between support and qualified lead triggers.",
-        "Implemented low-code automation pipelines using GoHighLevel, Google Sheets, Gmail, and website widgets to capture submissions and route qualified leads.",
-        "Created live pilot environments including hosted landing pages, QR-based event capture, and end-to-end demo environments.",
-        "Led full engagement lifecycle: discovery, scope, pricing, prompt iteration, testing, and phased rollout with ROI tied to admin time saved and lead capture volume."
+        "Designed and deployed AI concierge and intake systems for active clients including website assistants, event/community signup flows, and structured inquiry routing; clients gained first-ever lead tracking, automated follow-up, and analytics visibility into inquiry volume and source.",
+        "Built parent/subagent architectures grounded in business-specific knowledge bases, with prompt guardrails, FAQ handling, escalation logic, and intent separation between general support and qualified lead triggers.",
+        "Implemented low-code automation pipelines using GoHighLevel, Google Sheets, Gmail, and website widgets to capture submissions, trigger notifications, log inquiries, track QR and source campaigns, and route qualified leads into client workflows.",
+        "Created live pilot environments including hosted landing pages, QR-based event capture, AI-assisted customer support flows, and end-to-end demo environments for stakeholder review and client onboarding.",
+        "Led full engagement lifecycle: discovery, scope, pricing, prompt iteration, testing, and phased rollout; translated ambiguous business goals into automation roadmaps with ROI tied to admin time saved and lead capture volume."
       ]
     },
     {
       "name": "DwyerOmega",
-      "position": "Lead Business Analyst",
+      "position": "Lead Business Analyst and Transformation Program Lead",
       "startDate": "2024-01",
       "endDate": "2026-02",
       "location": "Chadds Ford, PA",
+      "summary": "PE-backed industrial platform; enterprise transformation spanning ERP/MRP, AMS, CRM/MarTech, and enterprise BI across Operations, Finance, Commercial, IT, and Supply Chain.",
       "highlights": [
-        "Managed program execution for six acquisitions and consolidations valued at $800M+ into core ERP/MRP landscape, standardizing KPIs for repeatable integration.",
-        "Owned enterprise reporting governance and reconciliation across global orders, sales, pricing, quality, and inventory.",
-        "Oversaw 15-20 resource offshore vendor team including tasking, prioritization, and delivery tracking.",
-        "Served as Global Admin for Jira and Confluence; deployed AI-assisted knowledge management in Confluence.",
-        "Led greenfield implementation planning for AMS and Microsoft Fabric with external consulting partner.",
-        "Integrated Salesforce, Hybris, and GA4 with ERP, AMS, and Fabric enabling funnel visibility and pricing data.",
-        "Built repeatable data-forensics workflow using Power Query, DAX Studio, and KNIME."
+        "Managed program and project execution for six acquisitions and business consolidations valued at $800M+ into the core ERP/MRP and reporting landscape, standardizing KPIs and processes for repeatable integration execution.",
+        "Owned enterprise reporting governance and reconciliation across global orders, sales, pricing, quality, and inventory, supporting decisions tied to pricing, margin, and working capital.",
+        "Oversaw a 15-20 resource offshore vendor team, managing day-to-day tasking, prioritization, progress reporting, and delivery performance tracking.",
+        "Served as Global Admin for Jira and Confluence; owned the operating model for intake, documentation standards, testing, and sign-off; deployed AI-assisted knowledge management in Confluence to improve documentation quality and governance scalability.",
+        "Led greenfield implementation planning for enterprise AMS and Microsoft Fabric, coordinating cross-functional discovery, harmonization, and planning with an external consulting partner.",
+        "Integrated CRM and marketing technologies (Salesforce, Hybris, GA4) with ERP, AMS, and Fabric, enabling funnel visibility, abandoned-cart analysis, and reliable product and pricing data.",
+        "Built a repeatable data-forensics workflow using Power Query, DAX Studio, and KNIME to reconcile large datasets and validate executive reporting when data integrity was disputed."
       ]
     },
     {
       "name": "DwyerOmega",
-      "position": "Senior Manufacturing Engineer",
+      "position": "Senior Manufacturing and Automation Engineer",
       "startDate": "2021-04",
       "endDate": "2024-01",
       "location": "Swedesboro, NJ",
+      "summary": "Operations and manufacturing engineering in sensor and wire manufacturing; three consecutive Top Performer of the Year awards.",
       "highlights": [
-        "Designed and executed $2M+ in automation and robotics-driven capital projects.",
-        "Reduced on-hand inventory by 75% through analytics and predictive planning.",
-        "Led Lean and continuous improvement initiatives including Kaizen events.",
-        "Built KPI dashboards for operations, engineering, and supply chain."
+        "Designed and executed $2M+ in automation and robotics-driven capital projects, improving throughput, reducing labor and overhead costs, and supporting sensor performance.",
+        "Applied analytics and predictive methods to planning and inventory, cutting waste and reducing on-hand inventory by 75% while maintaining internal service levels.",
+        "Led Lean and continuous improvement initiatives including standardized work design, root-cause problem solving, and Kaizen events, driving sustained improvements in scrap, uptime, and changeover.",
+        "Built KPI dashboards with operations, engineering, and supply chain to improve leadership visibility into output, scrap, and operational constraints."
       ]
     },
     {
@@ -71,20 +79,22 @@
       "startDate": "2020-11",
       "endDate": "2021-04",
       "location": "Pennsauken, NJ",
+      "summary": "Operations leadership across 40+ employees and 14+ production lines in a 24/7 high-mix wire and cable facility. Role ended due to facility closure following corporate reorganization.",
       "highlights": [
-        "Managed 40+ employees across 14+ production lines in 24/7 environment.",
-        "Contributed to $3M+ annualized labor savings through workflow redesign and line balancing."
+        "Managed 40+ employees across 14+ production lines in a 24/7 environment, driving safety, quality, and delivery performance.",
+        "Redesigned workflows, staffing, and scheduling to improve throughput and reduce scrap, contributing to $3M+ in annualized labor savings through line balancing and reduced overtime."
       ]
     },
     {
-      "name": "Selit North America",
+      "name": "Selit North America, Inc.",
       "position": "Process & Manufacturing Engineer",
       "startDate": "2018-10",
       "endDate": "2020-11",
       "location": "Plattsburgh, NY",
+      "summary": "24/7 foam extrusion and recycling operations for flooring OEM underlayment. Key contributor to OSHA SHARP certification.",
       "highlights": [
-        "Spearheaded startup of $20M sister facility near Atlanta including full plant design and commissioning.",
-        "Day-to-day technical lead for 30+ FTE production team."
+        "Spearheaded startup of a $20M sister facility near Atlanta, GA, including full plant design, equipment procurement, process development, and production line commissioning from greenfield through initial production.",
+        "Served as day-to-day technical lead for a 30+ FTE production team across safety, quality, process, and customer issues."
       ]
     },
     {
@@ -93,53 +103,65 @@
       "startDate": "2017-05",
       "endDate": "2018-05",
       "location": "Front Royal, VA",
+      "summary": "Foam extrusion for global luxury automotive OEMs; OSHA Star-certified site.",
       "highlights": [
-        "Increased line speeds by average 60 meters per hour generating $1M+ annualized revenue impact."
+        "Optimized final stages of the foam expansion process, increasing line speeds by an average of 60 meters per hour and generating $1M+ in annualized revenue impact."
       ]
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "National Multiple Sclerosis Society",
+      "position": "Rider and Volunteer, Bike MS",
+      "startDate": "2003-01",
+      "summary": "22+ year participant in Bike MS; raised more than $30,000 for MS research to date; consistently among top fundraisers."
+    },
+    {
+      "organization": "Little Thistle Farms",
+      "position": "Co-Founder and Operator",
+      "url": "https://littlethistlefarms.com",
+      "startDate": "2023-01",
+      "summary": "1-acre CSA and farm LLC in Chadds Ford, PA; 55 member subscriptions for current season; 1.1K Instagram following; active local business partnerships."
     }
   ],
   "education": [
     {
       "institution": "Villanova University",
       "area": "Strategic Management, Analytics & AI/ML",
-      "studyType": "MBA",
+      "studyType": "Master of Business Administration (MBA)",
       "startDate": "2023",
       "endDate": "2025",
-      "score": "4.0",
-      "courses": [
-        "Beta Gamma Sigma Honor Society"
-      ]
+      "score": "4.0 GPA",
+      "courses": ["Beta Gamma Sigma Honor Society"]
     },
     {
-      "institution": "University of Maryland Baltimore County",
+      "institution": "University of Maryland, Baltimore County",
       "area": "Chemical Engineering",
-      "studyType": "B.S.",
+      "studyType": "Bachelor of Science",
       "startDate": "2010",
       "endDate": "2016"
     }
   ],
   "certificates": [
-    {
-      "name": "APICS CSCP"
-    },
-    {
-      "name": "Atlassian Agile Project Management Professional"
-    },
-    {
-      "name": "Google Cybersecurity Professional"
-    },
-    {
-      "name": "Lean Six Sigma Green Belt",
-      "issuer": "Drexel University"
-    },
-    {
-      "name": "ISO 9001 Foundation"
-    }
+    { "name": "APICS Certified Supply Chain Professional (CSCP)" },
+    { "name": "Atlassian Agile Project Management Professional Certificate" },
+    { "name": "Google Cybersecurity Professional Certificate" },
+    { "name": "Lean Six Sigma Green Belt", "issuer": "Drexel University" },
+    { "name": "ISO 9001 Foundation" },
+    { "name": "Value Analysis and Value Engineering", "issuer": "Lean Focus" }
   ],
   "skills": [
     {
-      "name": "ERP/MRP Systems",
-      "keywords": ["SyteLine", "SAP S/4HANA", "QAD", "AMS"]
+      "name": "AI Automation",
+      "keywords": ["AI Agent Design", "Agentic Workflow Architecture", "Prompt Engineering", "Knowledge Base Design", "Low-Code Automation", "AI Concierge Systems", "Lead Capture & Routing", "n8n", "GoHighLevel", "Gemini", "Claude", "ChatGPT", "Google Workspace Automation"]
+    },
+    {
+      "name": "Core Competencies",
+      "keywords": ["Enterprise Transformation", "Post-Merger Integration", "Program & Project Leadership", "ERP/MRP & Enterprise Applications", "CRM & MarTech Enablement", "Data Platforms & BI", "Reporting Governance", "Operational ROI from AI", "Agile & Sprint Planning", "Change Management"]
+    },
+    {
+      "name": "ERP & Business Systems",
+      "keywords": ["SyteLine", "SAP S/4HANA", "QAD", "Sage", "QuickBooks", "Workwise", "MRM", "AMS"]
     },
     {
       "name": "Data & Analytics",
@@ -150,12 +172,8 @@
       "keywords": ["Salesforce", "Hybris", "GA4", "GoHighLevel"]
     },
     {
-      "name": "AI & Automation",
-      "keywords": ["AI Agent Design", "Prompt Engineering", "Knowledge Base Design", "Low-Code Automation", "n8n"]
-    },
-    {
-      "name": "Program & Project Management",
-      "keywords": ["Jira", "Confluence", "Agile", "Scrum", "Lean Six Sigma", "APICS CSCP"]
+      "name": "Work Management",
+      "keywords": ["Jira", "Confluence", "Agile", "Scrum", "Notion", "Visio", "MS Office", "Adobe Suite"]
     }
   ]
 }

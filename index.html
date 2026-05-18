@@ -1,394 +1,765 @@
-<!doctype html>
-    <html lang="en" style="">
-      <head>
-        <meta charset="utf-8" />
-        
-    <title>Alan Karp</title>
-    <meta name="description" content="Enterprise transformation and post-merger integration leader with 9+ years driving operational outcomes across PE-backed industrial platforms, manufacturing, and AI-enabled business systems. Core experience: ERP/MRP integration (SyteLine, SAP S/4HANA, QAD), enterprise reporting governance, CRM and MarTech enablement (Salesforce, Hybris, GA4), and program delivery across acquisitions totaling $800M+. Applied AI directly: deployed AI-assisted knowledge management in Confluence and built agentic automation systems through Syrup Labs AI. MBA, Villanova (Strategy, Analytics, AI/ML). B.S. Chemical Engineering, UMBC. APICS CSCP. Open to remote/hybrid Director or Sr. Manager roles in enterprise transformation, business operations, AI operations, or program leadership." />
-  
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" />
-        <style>
-          :root{color-scheme:light dark;--color-background-light: #ffffff;--color-dimmed-light: #f3f4f5;--color-primary-light: #191e23;--color-secondary-light: #6c7781;--color-accent-light: #0073aa;--color-background-dark: #191e23;--color-dimmed-dark: #23282d;--color-primary-dark: #fbfbfc;--color-secondary-dark: #ccd0d4;--color-accent-dark: #00a0d2;--color-background: var(--color-background-light);--color-dimmed: var(--color-dimmed-light);--color-primary: var(--color-primary-light);--color-secondary: var(--color-secondary-light);--color-accent: var(--color-accent-light);--scale-ratio: 1.25;--scale0: 1rem;--scale1: calc(var(--scale0) * var(--scale-ratio));--scale2: calc(var(--scale1) * var(--scale-ratio));--scale3: calc(var(--scale2) * var(--scale-ratio));--scale4: calc(var(--scale3) * var(--scale-ratio));--scale5: calc(var(--scale4) * var(--scale-ratio))}@media (prefers-color-scheme: dark){:root{--color-background: var(--color-background-dark);--color-dimmed: var(--color-dimmed-dark);--color-primary: var(--color-primary-dark);--color-secondary: var(--color-secondary-dark);--color-accent: var(--color-accent-dark)}}*{box-sizing:border-box;margin:0;padding:0}html{font-size:14px}body{background:var(--color-background);color:var(--color-primary);display:grid;font:1em/1.5 Lato,sans-serif;gap:2em;grid-template-columns:[full-start] 1fr [main-start side-start] minmax(min-content,12em) [side-end content-start] minmax(min-content,36em) [main-end content-end] 1fr [full-end];grid-template-rows:auto [content] 0;margin-bottom:4em}body:before{content:"";grid-column:full;grid-row:content}ol,ul{padding-left:1em}:not(.icon-list,.tag-list)>li+li{margin-top:.4em}li::marker,.network{color:var(--color-secondary)}a{color:var(--color-accent);text-decoration:none}a:focus,a:hover{text-decoration:underline}h1,h2,h3,h5{font-weight:400}h1,h2,h3{line-height:1.2}h1{font-size:var(--scale5)}h2{color:var(--color-secondary);font-size:var(--scale4)}h3{color:var(--color-secondary);font-size:var(--scale3);grid-column:side;margin-bottom:1rem}h4{font-size:var(--scale2)}h5{font-size:var(--scale1)}h6{font-size:var(--scale0)}blockquote{border-left:.2em solid var(--color-dimmed);padding-left:1em}cite{color:var(--color-secondary);font-style:inherit}cite:before{content:"— "}svg{margin-right:.2em;vertical-align:text-bottom}.masthead{background:var(--color-dimmed);display:inherit;gap:inherit;grid-column:full;grid-template-columns:inherit;padding:4em 0;text-align:center}.masthead>*,section{grid-column:main}.masthead>img{border:4px solid;border-radius:50%;margin:0 auto;max-width:12em}article>*+*,blockquote>*+*,.timeline>div>*+*{margin-top:.6em}.meta{color:var(--color-secondary)}.stack{display:grid;gap:1.5em}.icon-list{display:flex;flex-wrap:wrap;gap:.4em 1em;justify-content:center;list-style:none;padding:0}.grid-list{display:grid;gap:1em}.tag-list{display:flex;flex-wrap:wrap;gap:.4em;list-style:none;padding:0}.tag-list>li{background:var(--color-dimmed);border-radius:.2em;padding:.2em .6em}.timeline>div{position:relative}.timeline>div:not(:last-child){padding-bottom:1rem}.timeline>div:not(:last-child):before{content:"";position:absolute;top:1rem;left:-15px;width:2px;height:100%;background:var(--color-secondary)}.timeline>div:not(:only-child):after{content:"";position:absolute;top:.6rem;left:-20px;width:8px;height:8px;background:var(--color-secondary);border:2px solid var(--color-background);border-radius:50%}@media print,(min-width: 48em){h3{text-align:right;margin-bottom:inherit}.masthead{text-align:inherit}.masthead>*,section{grid-column:content}.masthead img{grid-column:side;grid-row:span 2;max-width:100%}section{display:contents}.icon-list{flex-direction:column}.grid-list{grid-template-columns:repeat(auto-fit,minmax(calc((100% - 1em)/2),1fr))}}time+time-duration:before{content:"· "}@media print{time-duration{display:none}}
-        </style>
-        <script type="module">
-          const pluralize = (num, str) => `${num} ${num === 1 ? str : str.concat('s')}`
-
-class TimeDuration extends HTMLElement {
-  connectedCallback() {
-    const dates = this.getAttribute('dates')
-    if (!dates) return this.remove()
-
-    const duration = dates.split('|').reduce((acc, _date, i, dates) => {
-      if (i % 2) return acc
-      const [startDate, endDate] = dates.slice(i)
-      return acc + (startDate ? +new Date(endDate || Date.now()) - +new Date(startDate) : 0)
-    }, 0)
-
-    const diffDate = new Date(duration)
-    const years = diffDate.getFullYear() - 1970
-    const months = diffDate.getMonth()
-    const days = diffDate.getDate() - 1
-
-    const segments = [
-      years && pluralize(years, 'yr'),
-      months && pluralize(months, 'mo'),
-      days && !years && !months && pluralize(days, 'day'),
-    ].filter(Boolean)
-    if (!segments.length) return
-
-    this.textContent = segments.join(' ')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alan Karp — Resume</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --purple: #7C3AED;
+    --purple-light: #A78BFA;
+    --purple-dark: #4C1D95;
+    --purple-faint: #EDE9FE;
+    --green: #059669;
+    --green-light: #6EE7B7;
+    --green-faint: #D1FAE5;
+    --off-white: #F8F7F4;
+    --grey-100: #F1F0EC;
+    --grey-200: #E2E0D8;
+    --grey-400: #9E9C94;
+    --grey-600: #5C5A54;
+    --grey-900: #1C1B18;
+    --bg: #F8F7F4;
+    --card: #FFFFFF;
+    --text: #1C1B18;
+    --text-muted: #5C5A54;
+    --border: #E2E0D8;
   }
-}
 
-customElements.define('time-duration', TimeDuration)
+  * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        </script>
-      </head>
-      <body>
-        
-    <header class="masthead">
-      
-      <div><h1>Alan Karp</h1> <h2>Enterprise Transformation & AI Operations Leader</h2></div>
-      <article><p>Enterprise transformation and post-merger integration leader with 9+ years driving operational outcomes across PE-backed industrial platforms, manufacturing, and AI-enabled business systems. Core experience: ERP/MRP integration (SyteLine, SAP S/4HANA, QAD), enterprise reporting governance, CRM and MarTech enablement (Salesforce, Hybris, GA4), and program delivery across acquisitions totaling $800M+. Applied AI directly: deployed AI-assisted knowledge management in Confluence and built agentic automation systems through Syrup Labs AI. MBA, Villanova (Strategy, Analytics, AI/ML). B.S. Chemical Engineering, UMBC. APICS CSCP. Open to remote/hybrid Director or Sr. Manager roles in enterprise transformation, business operations, AI operations, or program leadership.</p></article>
-      <ul class="icon-list">
-        
-          <li>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> Chadds Ford, United States
-          </li>
-        
-        
-          <li>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-            <a href="mailto:alanjacobkarp@gmail.com">alanjacobkarp@gmail.com</a>
-          </li>
-        
-        
-          <li>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-            <a href="tel:443-841-9131">443-841-9131</a>
-          </li>
-        
-        <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg> <a href="https://syrp.ai">syrp.ai</a></li>
-        
-            <li>
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg> <a href="https://linkedin.com/in/alanjkarp">alanjkarp</a>
-              <span class="network">(LinkedIn)</span>
-            </li>
-          
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.7;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Animated background */
+  .bg-canvas {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.18;
+    animation: drift 20s ease-in-out infinite;
+  }
+
+  .orb-1 {
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, #7C3AED, transparent);
+    top: -200px; left: -150px;
+    animation-duration: 22s;
+  }
+  .orb-2 {
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, #059669, transparent);
+    bottom: -100px; right: -100px;
+    animation-duration: 18s;
+    animation-delay: -8s;
+  }
+  .orb-3 {
+    width: 350px; height: 350px;
+    background: radial-gradient(circle, #A78BFA, transparent);
+    top: 40%; right: 10%;
+    animation-duration: 25s;
+    animation-delay: -4s;
+  }
+  .orb-4 {
+    width: 280px; height: 280px;
+    background: radial-gradient(circle, #6EE7B7, transparent);
+    top: 20%; left: 30%;
+    animation-duration: 30s;
+    animation-delay: -12s;
+  }
+
+  @keyframes drift {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(30px, -40px) scale(1.05); }
+    50% { transform: translate(-20px, 30px) scale(0.95); }
+    75% { transform: translate(40px, 20px) scale(1.02); }
+  }
+
+  /* Subtle grid overlay */
+  .bg-grid {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    background-image:
+      linear-gradient(rgba(124, 58, 237, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(124, 58, 237, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  /* Main layout */
+  .page {
+    position: relative;
+    z-index: 1;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 60px 32px 80px;
+  }
+
+  /* Header */
+  .header {
+    margin-bottom: 56px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+  }
+
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -1px; left: 0;
+    width: 80px; height: 2px;
+    background: linear-gradient(90deg, var(--purple), var(--green));
+    border-radius: 2px;
+  }
+
+  .name {
+    font-size: clamp(36px, 5vw, 52px);
+    font-weight: 300;
+    letter-spacing: -1.5px;
+    line-height: 1.1;
+    color: var(--grey-900);
+    margin-bottom: 6px;
+  }
+
+  .name span {
+    background: linear-gradient(135deg, var(--purple), var(--green));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 500;
+  }
+
+  .label {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text-muted);
+    letter-spacing: 0.04em;
+    margin-bottom: 24px;
+    font-family: 'DM Mono', monospace;
+  }
+
+  .contact-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+
+  .contact-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 12px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    font-size: 12.5px;
+    color: var(--grey-600);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    font-family: 'DM Mono', monospace;
+  }
+
+  .contact-chip:hover {
+    border-color: var(--purple-light);
+    color: var(--purple);
+    background: var(--purple-faint);
+    transform: translateY(-1px);
+  }
+
+  .contact-chip svg {
+    width: 12px; height: 12px;
+    opacity: 0.6;
+  }
+
+  .summary {
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--grey-600);
+    max-width: 680px;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--purple);
+    margin-top: 24px;
+  }
+
+  /* Section */
+  .section {
+    margin-bottom: 52px;
+  }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--purple);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, var(--border), transparent);
+  }
+
+  /* Skills grid */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+  }
+
+  .skill-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+    transition: all 0.2s ease;
+  }
+
+  .skill-card:hover {
+    border-color: var(--purple-light);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(124, 58, 237, 0.08);
+  }
+
+  .skill-cat {
+    font-size: 11px;
+    font-family: 'DM Mono', monospace;
+    font-weight: 500;
+    color: var(--green);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 7px;
+  }
+
+  .skill-items {
+    font-size: 13px;
+    color: var(--grey-600);
+    line-height: 1.6;
+  }
+
+  /* Experience */
+  .job {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin-bottom: 36px;
+    padding-bottom: 36px;
+    border-bottom: 1px solid var(--grey-100);
+  }
+
+  .job:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 4px;
+    flex-wrap: wrap;
+  }
+
+  .job-company {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--grey-900);
+    letter-spacing: -0.02em;
+  }
+
+  .job-dates {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: var(--text-muted);
+    white-space: nowrap;
+    padding: 3px 10px;
+    background: var(--grey-100);
+    border-radius: 20px;
+    margin-top: 2px;
+  }
+
+  .job-title {
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--purple);
+    margin-bottom: 4px;
+  }
+
+  .job-location {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-family: 'DM Mono', monospace;
+    margin-bottom: 10px;
+  }
+
+  .job-context {
+    font-size: 13.5px;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-bottom: 12px;
+    padding: 8px 12px;
+    background: var(--grey-100);
+    border-radius: 6px;
+  }
+
+  .job-bullets {
+    list-style: none;
+    padding: 0;
+  }
+
+  .job-bullets li {
+    font-size: 13.5px;
+    color: var(--grey-600);
+    line-height: 1.65;
+    padding: 4px 0 4px 16px;
+    position: relative;
+  }
+
+  .job-bullets li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 12px;
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--purple-light), var(--green-light));
+  }
+
+  /* Education */
+  .edu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 14px;
+  }
+
+  .edu-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px 20px;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .edu-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 3px;
+    background: linear-gradient(90deg, var(--purple), var(--green));
+  }
+
+  .edu-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(124, 58, 237, 0.08);
+  }
+
+  .edu-school {
+    font-size: 14.5px;
+    font-weight: 500;
+    color: var(--grey-900);
+    margin-bottom: 3px;
+  }
+
+  .edu-degree {
+    font-size: 13px;
+    color: var(--grey-600);
+    margin-bottom: 6px;
+  }
+
+  .edu-meta {
+    font-family: 'DM Mono', monospace;
+    font-size: 11.5px;
+    color: var(--text-muted);
+  }
+
+  .edu-badge {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 2px 8px;
+    background: var(--purple-faint);
+    color: var(--purple-dark);
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 500;
+  }
+
+  /* Certs */
+  .cert-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .cert-tag {
+    padding: 5px 12px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    font-size: 12.5px;
+    color: var(--grey-600);
+    transition: all 0.2s ease;
+  }
+
+  .cert-tag:hover {
+    border-color: var(--green);
+    color: var(--green);
+    background: var(--green-faint);
+  }
+
+  /* Volunteer */
+  .vol-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 14px;
+  }
+
+  .vol-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px 20px;
+    transition: all 0.2s ease;
+  }
+
+  .vol-card:hover {
+    border-color: var(--green);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(5, 150, 105, 0.08);
+  }
+
+  .vol-org {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--grey-900);
+    margin-bottom: 3px;
+  }
+
+  .vol-role {
+    font-size: 12px;
+    color: var(--green);
+    font-family: 'DM Mono', monospace;
+    margin-bottom: 8px;
+  }
+
+  .vol-desc {
+    font-size: 13px;
+    color: var(--grey-600);
+    line-height: 1.6;
+  }
+
+  .vol-link {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 12px;
+    color: var(--purple);
+    text-decoration: none;
+    font-family: 'DM Mono', monospace;
+    transition: color 0.2s;
+  }
+
+  .vol-link:hover { color: var(--green); }
+
+  /* Footer */
+  .footer {
+    margin-top: 60px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--text-muted);
+  }
+
+  /* Fade in animation */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(16px);
+    animation: fadeUp 0.6s ease forwards;
+  }
+
+  .section:nth-child(1) { animation-delay: 0.1s; }
+  .section:nth-child(2) { animation-delay: 0.2s; }
+  .section:nth-child(3) { animation-delay: 0.3s; }
+  .section:nth-child(4) { animation-delay: 0.4s; }
+  .section:nth-child(5) { animation-delay: 0.5s; }
+  .section:nth-child(6) { animation-delay: 0.6s; }
+
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .header { animation: fadeUp 0.5s ease forwards; }
+
+  @media (max-width: 600px) {
+    .page { padding: 32px 20px 60px; }
+    .job-header { flex-direction: column; gap: 6px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="bg-canvas">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+  <div class="orb orb-4"></div>
+</div>
+<div class="bg-grid"></div>
+
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <h1 class="name">Alan <span>Karp</span></h1>
+    <div class="label">Enterprise Transformation &amp; AI Operations Leader</div>
+
+    <div class="contact-row">
+      <a href="mailto:alanjacobkarp@gmail.com" class="contact-chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+        alanjacobkarp@gmail.com
+      </a>
+      <a href="tel:4438419131" class="contact-chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.42a2 2 0 0 1 1.99-2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.08 6.08l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        443-841-9131
+      </a>
+      <a href="https://linkedin.com/in/alanjkarp" target="_blank" class="contact-chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+        linkedin.com/in/alanjkarp
+      </a>
+      <a href="https://syrp.ai" target="_blank" class="contact-chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        syrp.ai
+      </a>
+      <span class="contact-chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Chadds Ford, PA
+      </span>
+    </div>
+
+    <div class="summary">
+      Transformation and integration leader with a background spanning manufacturing, enterprise systems, analytics, and AI automation. Founded Syrup Labs AI to translate operational experience into applied AI, delivering agentic concierge systems, lead capture workflows, and automation infrastructure for small businesses. Previously at DwyerOmega, drove cross-functional execution across ERP/MRP, AMS, CRM/MarTech, and enterprise reporting through six acquisitions ($800M+). MBA, Villanova (Strategy, Analytics, AI/ML). B.S. Chemical Engineering, UMBC.
+    </div>
+  </div>
+
+  <!-- Skills -->
+  <div class="section fade-up">
+    <div class="section-label">Technical Skills</div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-cat">AI Automation</div>
+        <div class="skill-items">Agent Design, Agentic Workflows, Prompt Engineering, Knowledge Base Design, Low-Code Automation, n8n, GoHighLevel, Gemini, Claude, ChatGPT</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-cat">ERP &amp; Business Systems</div>
+        <div class="skill-items">SyteLine, SAP S/4HANA, QAD, Sage, QuickBooks, Workwise, MRM, AMS</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-cat">Data &amp; Analytics</div>
+        <div class="skill-items">Microsoft Fabric, Power BI, Tableau, SQL, Python, R, DAX Studio, KNIME</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-cat">CRM &amp; MarTech</div>
+        <div class="skill-items">Salesforce, Hybris, GA4, GoHighLevel</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-cat">Program Management</div>
+        <div class="skill-items">Jira (Global Admin), Confluence, Agile, Scrum, Lean Six Sigma, Post-Merger Integration, Change Management</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-cat">Work Management</div>
+        <div class="skill-items">Notion, Visio, MS Office, Adobe Suite, draw.io, SOLIDWORKS</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Experience -->
+  <div class="section fade-up">
+    <div class="section-label">Professional Experience</div>
+
+    <div class="job">
+      <div class="job-header">
+        <div class="job-company">Syrup Labs AI (syrp.ai)</div>
+        <div class="job-dates">Feb 2026 — Present</div>
+      </div>
+      <div class="job-title">Founder &amp; AI Automation Consultant</div>
+      <div class="job-location">Chadds Ford, PA</div>
+      <div class="job-context">AI automation consultancy building and deploying agentic systems, lead capture workflows, and customer support automation for small and local businesses; three active commercial clients.</div>
+      <ul class="job-bullets">
+        <li>Designed and deployed AI concierge and intake systems for active clients including website assistants, event/community signup flows, and structured inquiry routing; clients gained first-ever lead tracking, automated follow-up, and analytics visibility.</li>
+        <li>Built parent/subagent architectures grounded in business-specific knowledge bases, with prompt guardrails, FAQ handling, escalation logic, and intent separation between general support and qualified lead triggers.</li>
+        <li>Implemented low-code automation pipelines using GoHighLevel, Google Sheets, Gmail, and website widgets to capture submissions, trigger notifications, log inquiries, and route qualified leads into client workflows.</li>
+        <li>Created live pilot environments including hosted landing pages, QR-based event capture, AI-assisted customer support flows, and end-to-end demo environments for stakeholder review.</li>
+        <li>Led full engagement lifecycle: discovery, scope, pricing, prompt iteration, testing, and phased rollout with ROI tied to admin time saved and lead capture volume.</li>
       </ul>
-    </header>
-   
-      <section id="work">
-        <h3>Work</h3>
-        <div class="stack">
-          
-              <article>
-                <header>
-                  <h4>AI Automation Consultant</h4>
-                  <div class="meta">
-                    
-                          <div>
-                            <strong><a href="https://syrp.ai">Syrup Labs AI</a></strong>
-                          </div>
-                          <div><time datetime="2026-02">Feb 2026</time> – Present <time-duration dates="2026-02|"></time-duration></div>
-                          <div>Chadds Ford, PA</div>
-                        
-                  </div>
-                </header>
-                <div class="timeline">
-                  
-                      <div>
-                        
-                        
-                        
-                          <ul>
-                            <li><p>Designed and deployed AI concierge and intake systems for active clients including website assistants, event signup flows, and structured inquiry routing; clients gained first-ever lead tracking and automated follow-up.</p></li><li><p>Built parent/subagent architectures with prompt guardrails, FAQ handling, escalation logic, and intent separation between support and qualified lead triggers.</p></li><li><p>Implemented low-code automation pipelines using GoHighLevel, Google Sheets, Gmail, and website widgets to capture submissions and route qualified leads.</p></li><li><p>Created live pilot environments including hosted landing pages, QR-based event capture, and end-to-end demo environments.</p></li><li><p>Led full engagement lifecycle: discovery, scope, pricing, prompt iteration, testing, and phased rollout with ROI tied to admin time saved and lead capture volume.</p></li>
-                          </ul>
-                        
-                      </div>
-                    
-                </div>
-              </article>
-            
-              <article>
-                <header>
-                  <h4>DwyerOmega</h4>
-                  <div class="meta">
-                    
-                          
-                          <div><time-duration dates="2024-01|2026-02|2021-04|2024-01"></time-duration></div>
-                        
-                  </div>
-                </header>
-                <div class="timeline">
-                  
-                      <div>
-                        
-                          <div>
-                            <h5>Lead Business Analyst</h5>
-                            <div class="meta">
-                              <div><time datetime="2024-01">Jan 2024</time> – <time datetime="2026-02">Feb 2026</time> <time-duration dates="2024-01|2026-02"></time-duration></div>
-                              <div>Chadds Ford, PA</div>
-                            </div>
-                          </div>
-                        
-                        
-                        
-                          <ul>
-                            <li><p>Managed program execution for six acquisitions and consolidations valued at $800M+ into core ERP/MRP landscape, standardizing KPIs for repeatable integration.</p></li><li><p>Owned enterprise reporting governance and reconciliation across global orders, sales, pricing, quality, and inventory.</p></li><li><p>Oversaw 15-20 resource offshore vendor team including tasking, prioritization, and delivery tracking.</p></li><li><p>Served as Global Admin for Jira and Confluence; deployed AI-assisted knowledge management in Confluence.</p></li><li><p>Led greenfield implementation planning for AMS and Microsoft Fabric with external consulting partner.</p></li><li><p>Integrated Salesforce, Hybris, and GA4 with ERP, AMS, and Fabric enabling funnel visibility and pricing data.</p></li><li><p>Built repeatable data-forensics workflow using Power Query, DAX Studio, and KNIME.</p></li>
-                          </ul>
-                        
-                      </div>
-                    
-                      <div>
-                        
-                          <div>
-                            <h5>Senior Manufacturing Engineer</h5>
-                            <div class="meta">
-                              <div><time datetime="2021-04">Apr 2021</time> – <time datetime="2024-01">Jan 2024</time> <time-duration dates="2021-04|2024-01"></time-duration></div>
-                              <div>Swedesboro, NJ</div>
-                            </div>
-                          </div>
-                        
-                        
-                        
-                          <ul>
-                            <li><p>Designed and executed $2M+ in automation and robotics-driven capital projects.</p></li><li><p>Reduced on-hand inventory by 75% through analytics and predictive planning.</p></li><li><p>Led Lean and continuous improvement initiatives including Kaizen events.</p></li><li><p>Built KPI dashboards for operations, engineering, and supply chain.</p></li>
-                          </ul>
-                        
-                      </div>
-                    
-                </div>
-              </article>
-            
-              <article>
-                <header>
-                  <h4>Production Manager</h4>
-                  <div class="meta">
-                    
-                          <div>
-                            <strong>Copperweld</strong>
-                          </div>
-                          <div><time datetime="2020-11">Nov 2020</time> – <time datetime="2021-04">Apr 2021</time> <time-duration dates="2020-11|2021-04"></time-duration></div>
-                          <div>Pennsauken, NJ</div>
-                        
-                  </div>
-                </header>
-                <div class="timeline">
-                  
-                      <div>
-                        
-                        
-                        
-                          <ul>
-                            <li><p>Managed 40+ employees across 14+ production lines in 24/7 environment.</p></li><li><p>Contributed to $3M+ annualized labor savings through workflow redesign and line balancing.</p></li>
-                          </ul>
-                        
-                      </div>
-                    
-                </div>
-              </article>
-            
-              <article>
-                <header>
-                  <h4>Process & Manufacturing Engineer</h4>
-                  <div class="meta">
-                    
-                          <div>
-                            <strong>Selit North America</strong>
-                          </div>
-                          <div><time datetime="2018-10">Oct 2018</time> – <time datetime="2020-11">Nov 2020</time> <time-duration dates="2018-10|2020-11"></time-duration></div>
-                          <div>Plattsburgh, NY</div>
-                        
-                  </div>
-                </header>
-                <div class="timeline">
-                  
-                      <div>
-                        
-                        
-                        
-                          <ul>
-                            <li><p>Spearheaded startup of $20M sister facility near Atlanta including full plant design and commissioning.</p></li><li><p>Day-to-day technical lead for 30+ FTE production team.</p></li>
-                          </ul>
-                        
-                      </div>
-                    
-                </div>
-              </article>
-            
-              <article>
-                <header>
-                  <h4>Process Engineer</h4>
-                  <div class="meta">
-                    
-                          <div>
-                            <strong>Toray Plastics</strong>
-                          </div>
-                          <div><time datetime="2017-05">May 2017</time> – <time datetime="2018-05">May 2018</time> <time-duration dates="2017-05|2018-05"></time-duration></div>
-                          <div>Front Royal, VA</div>
-                        
-                  </div>
-                </header>
-                <div class="timeline">
-                  
-                      <div>
-                        
-                        
-                        
-                          <ul>
-                            <li><p>Increased line speeds by average 60 meters per hour generating $1M+ annualized revenue impact.</p></li>
-                          </ul>
-                        
-                      </div>
-                    
-                </div>
-              </article>
-            
-        </div>
-      </section>
-      
-      <section id="education">
-        <h3>Education</h3>
-        <div class="stack">
-          
-              <article>
-                <header>
-                  <h4>Villanova University</h4>
-                  <div class="meta">
-                    <div>MBA in <strong>Strategic Management, Analytics & AI/ML</strong></div>
-                    <div><time datetime="2023">Jan 2023</time> – <time datetime="2025">Jan 2025</time> <time-duration dates="2023|2025"></time-duration></div>
-                  </div>
-                </header>
-                
-                  <h5>Courses</h5>
-                  <ul>
-                    <li><p>Beta Gamma Sigma Honor Society</p></li>
-                  </ul>
-                
-              </article>
-            
-              <article>
-                <header>
-                  <h4>University of Maryland Baltimore County</h4>
-                  <div class="meta">
-                    <div>B.S. in <strong>Chemical Engineering</strong></div>
-                    <div><time datetime="2010">Jan 2010</time> – <time datetime="2016">Jan 2016</time> <time-duration dates="2010|2016"></time-duration></div>
-                  </div>
-                </header>
-                
-              </article>
-            
-        </div>
-      </section>
-    
-          
-      <section id="certificates">
-        <h3>Certificates</h3>
-        <div class="stack">
-          
-              <article>
-                <header>
-                  <h4>APICS CSCP</h4>
-                  <div class="meta">
-                     
-                  </div>
-                </header>
-              </article>
-            
-              <article>
-                <header>
-                  <h4>Atlassian Agile Project Management Professional</h4>
-                  <div class="meta">
-                     
-                  </div>
-                </header>
-              </article>
-            
-              <article>
-                <header>
-                  <h4>Google Cybersecurity Professional</h4>
-                  <div class="meta">
-                     
-                  </div>
-                </header>
-              </article>
-            
-              <article>
-                <header>
-                  <h4>Lean Six Sigma Green Belt</h4>
-                  <div class="meta">
-                    <div>Issued by <strong>Drexel University</strong></div> 
-                  </div>
-                </header>
-              </article>
-            
-              <article>
-                <header>
-                  <h4>ISO 9001 Foundation</h4>
-                  <div class="meta">
-                     
-                  </div>
-                </header>
-              </article>
-            
-        </div>
-      </section>
-    
-         
-      <section id="skills">
-        <h3>Skills</h3>
-        <div class="grid-list">
-          
-              <div>
-                <h4>ERP/MRP Systems</h4>
-                
-                  <ul class="tag-list">
-                    <li>SyteLine</li><li>SAP S/4HANA</li><li>QAD</li><li>AMS</li>
-                  </ul>
-                
-              </div>
-            
-              <div>
-                <h4>Data & Analytics</h4>
-                
-                  <ul class="tag-list">
-                    <li>Microsoft Fabric</li><li>Power BI</li><li>Tableau</li><li>SQL</li><li>Python</li><li>R</li><li>DAX Studio</li><li>KNIME</li>
-                  </ul>
-                
-              </div>
-            
-              <div>
-                <h4>CRM & MarTech</h4>
-                
-                  <ul class="tag-list">
-                    <li>Salesforce</li><li>Hybris</li><li>GA4</li><li>GoHighLevel</li>
-                  </ul>
-                
-              </div>
-            
-              <div>
-                <h4>AI & Automation</h4>
-                
-                  <ul class="tag-list">
-                    <li>AI Agent Design</li><li>Prompt Engineering</li><li>Knowledge Base Design</li><li>Low-Code Automation</li><li>n8n</li>
-                  </ul>
-                
-              </div>
-            
-              <div>
-                <h4>Program & Project Management</h4>
-                
-                  <ul class="tag-list">
-                    <li>Jira</li><li>Confluence</li><li>Agile</li><li>Scrum</li><li>Lean Six Sigma</li><li>APICS CSCP</li>
-                  </ul>
-                
-              </div>
-            
-        </div>
-      </section>
-     
-         
-      </body>
-    </html>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <div class="job-company">DwyerOmega</div>
+        <div class="job-dates">Jan 2024 — Feb 2026</div>
+      </div>
+      <div class="job-title">Lead Business Analyst &amp; Transformation Program Lead</div>
+      <div class="job-location">Chadds Ford, PA</div>
+      <div class="job-context">PE-backed industrial platform; enterprise transformation spanning ERP/MRP, AMS, CRM/MarTech, and enterprise BI across Operations, Finance, Commercial, IT, and Supply Chain.</div>
+      <ul class="job-bullets">
+        <li>Managed program and project execution for six acquisitions and consolidations valued at $800M+ into the core ERP/MRP and reporting landscape, standardizing KPIs for repeatable integration execution.</li>
+        <li>Owned enterprise reporting governance and reconciliation across global orders, sales, pricing, quality, and inventory, supporting decisions tied to pricing, margin, and working capital.</li>
+        <li>Oversaw a 15–20 resource offshore vendor team, managing day-to-day tasking, prioritization, progress reporting, and delivery performance tracking.</li>
+        <li>Served as Global Admin for Jira and Confluence; deployed AI-assisted knowledge management in Confluence to improve documentation quality and governance scalability.</li>
+        <li>Led greenfield implementation planning for enterprise AMS and Microsoft Fabric with an external consulting partner.</li>
+        <li>Integrated Salesforce, Hybris, and GA4 with ERP, AMS, and Fabric, enabling funnel visibility, abandoned-cart analysis, and reliable product and pricing data.</li>
+        <li>Built a repeatable data-forensics workflow using Power Query, DAX Studio, and KNIME to reconcile large datasets and validate executive reporting.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <div class="job-company">DwyerOmega</div>
+        <div class="job-dates">Apr 2021 — Jan 2024</div>
+      </div>
+      <div class="job-title">Senior Manufacturing &amp; Automation Engineer</div>
+      <div class="job-location">Swedesboro, NJ</div>
+      <div class="job-context">Operations and manufacturing engineering in sensor and wire manufacturing; three consecutive Top Performer of the Year awards.</div>
+      <ul class="job-bullets">
+        <li>Designed and executed $2M+ in automation and robotics-driven capital projects, improving throughput, reducing labor costs, and supporting sensor performance.</li>
+        <li>Applied analytics and predictive methods to planning and inventory, cutting waste and reducing on-hand inventory by 75% while maintaining internal service levels.</li>
+        <li>Led Lean and continuous improvement initiatives including Kaizen events, standardized work design, and root-cause problem solving.</li>
+        <li>Built KPI dashboards with operations, engineering, and supply chain to improve leadership visibility into output, scrap, and operational constraints.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <div class="job-company">Copperweld</div>
+        <div class="job-dates">Nov 2020 — Apr 2021</div>
+      </div>
+      <div class="job-title">Production Manager</div>
+      <div class="job-location">Pennsauken, NJ</div>
+      <div class="job-context">Operations leadership across 40+ employees and 14+ lines in a 24/7 facility. Role ended due to facility closure following corporate reorganization.</div>
+      <ul class="job-bullets">
+        <li>Managed 40+ employees across 14+ production lines in a 24/7 environment, driving safety, quality, and delivery performance.</li>
+        <li>Contributed to $3M+ in annualized labor savings through workflow redesign, line balancing, and reduced overtime.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <div class="job-company">Selit North America, Inc.</div>
+        <div class="job-dates">Oct 2018 — Nov 2020</div>
+      </div>
+      <div class="job-title">Process &amp; Manufacturing Engineer</div>
+      <div class="job-location">Plattsburgh, NY</div>
+      <div class="job-context">24/7 foam extrusion and recycling operations for flooring OEM underlayment. Key contributor to OSHA SHARP certification.</div>
+      <ul class="job-bullets">
+        <li>Spearheaded startup of a $20M sister facility near Atlanta, GA, including full plant design, equipment procurement, process development, and production line commissioning from greenfield.</li>
+        <li>Served as day-to-day technical lead for a 30+ FTE production team across safety, quality, process, and customer issues.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <div class="job-company">Toray Plastics</div>
+        <div class="job-dates">May 2017 — May 2018</div>
+      </div>
+      <div class="job-title">Process Engineer</div>
+      <div class="job-location">Front Royal, VA</div>
+      <div class="job-context">Foam extrusion for global luxury automotive OEMs; OSHA Star-certified site.</div>
+      <ul class="job-bullets">
+        <li>Optimized final stages of the foam expansion process, increasing line speeds by an average of 60 meters per hour and generating $1M+ in annualized revenue impact.</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Education -->
+  <div class="section fade-up">
+    <div class="section-label">Education</div>
+    <div class="edu-grid">
+      <div class="edu-card">
+        <div class="edu-school">Villanova University</div>
+        <div class="edu-degree">Master of Business Administration (MBA)<br>Strategic Management, Analytics &amp; AI/ML</div>
+        <div class="edu-meta">Villanova, PA &nbsp;·&nbsp; 2023–2025 &nbsp;·&nbsp; GPA 4.0</div>
+        <div class="edu-badge">Beta Gamma Sigma Honor Society</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-school">University of Maryland, Baltimore County</div>
+        <div class="edu-degree">Bachelor of Science, Chemical Engineering</div>
+        <div class="edu-meta">Catonsville, MD &nbsp;·&nbsp; 2010–2016</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Certifications -->
+  <div class="section fade-up">
+    <div class="section-label">Certifications</div>
+    <div class="cert-list">
+      <span class="cert-tag">APICS CSCP</span>
+      <span class="cert-tag">Atlassian Agile Project Management Professional</span>
+      <span class="cert-tag">Google Cybersecurity Professional</span>
+      <span class="cert-tag">Lean Six Sigma Green Belt — Drexel University</span>
+      <span class="cert-tag">ISO 9001 Foundation</span>
+      <span class="cert-tag">Value Analysis &amp; Value Engineering — Lean Focus</span>
+    </div>
+  </div>
+
+  <!-- Volunteering -->
+  <div class="section fade-up">
+    <div class="section-label">Volunteering &amp; Entrepreneurial</div>
+    <div class="vol-grid">
+      <div class="vol-card">
+        <div class="vol-org">National Multiple Sclerosis Society</div>
+        <div class="vol-role">Rider &amp; Volunteer, Bike MS · 2003–Present</div>
+        <div class="vol-desc">22+ year participant in Bike MS; raised more than $30,000 for MS research to date; consistently among top fundraisers.</div>
+        <a href="https://events.nationalmssociety.org/participants/AlanJKarp" target="_blank" class="vol-link">→ View my fundraising page</a>
+      </div>
+      <div class="vol-card">
+        <div class="vol-org">Little Thistle Farms</div>
+        <div class="vol-role">Co-Founder &amp; Operator · 2023–Present</div>
+        <div class="vol-desc">1-acre CSA and farm LLC in Chadds Ford, PA; 55 member subscriptions for current season; 1.1K Instagram following; active local business partnerships.</div>
+        <a href="https://littlethistlefarms.com" target="_blank" class="vol-link">→ littlethistlefarms.com</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    syrp.ai/resume &nbsp;·&nbsp; last updated May 2026
+  </div>
+
+</div>
+</body>
+</html>
