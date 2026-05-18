@@ -1,0 +1,394 @@
+<!doctype html>
+    <html lang="en" style="">
+      <head>
+        <meta charset="utf-8" />
+        
+    <title>Alan Karp</title>
+    <meta name="description" content="Enterprise transformation and post-merger integration leader with 9+ years driving operational outcomes across PE-backed industrial platforms, manufacturing, and AI-enabled business systems. Core experience: ERP/MRP integration (SyteLine, SAP S/4HANA, QAD), enterprise reporting governance, CRM and MarTech enablement (Salesforce, Hybris, GA4), and program delivery across acquisitions totaling $800M+. Applied AI directly: deployed AI-assisted knowledge management in Confluence and built agentic automation systems through Syrup Labs AI. MBA, Villanova (Strategy, Analytics, AI/ML). B.S. Chemical Engineering, UMBC. APICS CSCP. Open to remote/hybrid Director or Sr. Manager roles in enterprise transformation, business operations, AI operations, or program leadership." />
+  
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" />
+        <style>
+          :root{color-scheme:light dark;--color-background-light: #ffffff;--color-dimmed-light: #f3f4f5;--color-primary-light: #191e23;--color-secondary-light: #6c7781;--color-accent-light: #0073aa;--color-background-dark: #191e23;--color-dimmed-dark: #23282d;--color-primary-dark: #fbfbfc;--color-secondary-dark: #ccd0d4;--color-accent-dark: #00a0d2;--color-background: var(--color-background-light);--color-dimmed: var(--color-dimmed-light);--color-primary: var(--color-primary-light);--color-secondary: var(--color-secondary-light);--color-accent: var(--color-accent-light);--scale-ratio: 1.25;--scale0: 1rem;--scale1: calc(var(--scale0) * var(--scale-ratio));--scale2: calc(var(--scale1) * var(--scale-ratio));--scale3: calc(var(--scale2) * var(--scale-ratio));--scale4: calc(var(--scale3) * var(--scale-ratio));--scale5: calc(var(--scale4) * var(--scale-ratio))}@media (prefers-color-scheme: dark){:root{--color-background: var(--color-background-dark);--color-dimmed: var(--color-dimmed-dark);--color-primary: var(--color-primary-dark);--color-secondary: var(--color-secondary-dark);--color-accent: var(--color-accent-dark)}}*{box-sizing:border-box;margin:0;padding:0}html{font-size:14px}body{background:var(--color-background);color:var(--color-primary);display:grid;font:1em/1.5 Lato,sans-serif;gap:2em;grid-template-columns:[full-start] 1fr [main-start side-start] minmax(min-content,12em) [side-end content-start] minmax(min-content,36em) [main-end content-end] 1fr [full-end];grid-template-rows:auto [content] 0;margin-bottom:4em}body:before{content:"";grid-column:full;grid-row:content}ol,ul{padding-left:1em}:not(.icon-list,.tag-list)>li+li{margin-top:.4em}li::marker,.network{color:var(--color-secondary)}a{color:var(--color-accent);text-decoration:none}a:focus,a:hover{text-decoration:underline}h1,h2,h3,h5{font-weight:400}h1,h2,h3{line-height:1.2}h1{font-size:var(--scale5)}h2{color:var(--color-secondary);font-size:var(--scale4)}h3{color:var(--color-secondary);font-size:var(--scale3);grid-column:side;margin-bottom:1rem}h4{font-size:var(--scale2)}h5{font-size:var(--scale1)}h6{font-size:var(--scale0)}blockquote{border-left:.2em solid var(--color-dimmed);padding-left:1em}cite{color:var(--color-secondary);font-style:inherit}cite:before{content:"— "}svg{margin-right:.2em;vertical-align:text-bottom}.masthead{background:var(--color-dimmed);display:inherit;gap:inherit;grid-column:full;grid-template-columns:inherit;padding:4em 0;text-align:center}.masthead>*,section{grid-column:main}.masthead>img{border:4px solid;border-radius:50%;margin:0 auto;max-width:12em}article>*+*,blockquote>*+*,.timeline>div>*+*{margin-top:.6em}.meta{color:var(--color-secondary)}.stack{display:grid;gap:1.5em}.icon-list{display:flex;flex-wrap:wrap;gap:.4em 1em;justify-content:center;list-style:none;padding:0}.grid-list{display:grid;gap:1em}.tag-list{display:flex;flex-wrap:wrap;gap:.4em;list-style:none;padding:0}.tag-list>li{background:var(--color-dimmed);border-radius:.2em;padding:.2em .6em}.timeline>div{position:relative}.timeline>div:not(:last-child){padding-bottom:1rem}.timeline>div:not(:last-child):before{content:"";position:absolute;top:1rem;left:-15px;width:2px;height:100%;background:var(--color-secondary)}.timeline>div:not(:only-child):after{content:"";position:absolute;top:.6rem;left:-20px;width:8px;height:8px;background:var(--color-secondary);border:2px solid var(--color-background);border-radius:50%}@media print,(min-width: 48em){h3{text-align:right;margin-bottom:inherit}.masthead{text-align:inherit}.masthead>*,section{grid-column:content}.masthead img{grid-column:side;grid-row:span 2;max-width:100%}section{display:contents}.icon-list{flex-direction:column}.grid-list{grid-template-columns:repeat(auto-fit,minmax(calc((100% - 1em)/2),1fr))}}time+time-duration:before{content:"· "}@media print{time-duration{display:none}}
+        </style>
+        <script type="module">
+          const pluralize = (num, str) => `${num} ${num === 1 ? str : str.concat('s')}`
+
+class TimeDuration extends HTMLElement {
+  connectedCallback() {
+    const dates = this.getAttribute('dates')
+    if (!dates) return this.remove()
+
+    const duration = dates.split('|').reduce((acc, _date, i, dates) => {
+      if (i % 2) return acc
+      const [startDate, endDate] = dates.slice(i)
+      return acc + (startDate ? +new Date(endDate || Date.now()) - +new Date(startDate) : 0)
+    }, 0)
+
+    const diffDate = new Date(duration)
+    const years = diffDate.getFullYear() - 1970
+    const months = diffDate.getMonth()
+    const days = diffDate.getDate() - 1
+
+    const segments = [
+      years && pluralize(years, 'yr'),
+      months && pluralize(months, 'mo'),
+      days && !years && !months && pluralize(days, 'day'),
+    ].filter(Boolean)
+    if (!segments.length) return
+
+    this.textContent = segments.join(' ')
+  }
+}
+
+customElements.define('time-duration', TimeDuration)
+
+        </script>
+      </head>
+      <body>
+        
+    <header class="masthead">
+      
+      <div><h1>Alan Karp</h1> <h2>Enterprise Transformation & AI Operations Leader</h2></div>
+      <article><p>Enterprise transformation and post-merger integration leader with 9+ years driving operational outcomes across PE-backed industrial platforms, manufacturing, and AI-enabled business systems. Core experience: ERP/MRP integration (SyteLine, SAP S/4HANA, QAD), enterprise reporting governance, CRM and MarTech enablement (Salesforce, Hybris, GA4), and program delivery across acquisitions totaling $800M+. Applied AI directly: deployed AI-assisted knowledge management in Confluence and built agentic automation systems through Syrup Labs AI. MBA, Villanova (Strategy, Analytics, AI/ML). B.S. Chemical Engineering, UMBC. APICS CSCP. Open to remote/hybrid Director or Sr. Manager roles in enterprise transformation, business operations, AI operations, or program leadership.</p></article>
+      <ul class="icon-list">
+        
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> Chadds Ford, United States
+          </li>
+        
+        
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <a href="mailto:alanjacobkarp@gmail.com">alanjacobkarp@gmail.com</a>
+          </li>
+        
+        
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <a href="tel:443-841-9131">443-841-9131</a>
+          </li>
+        
+        <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg> <a href="https://syrp.ai">syrp.ai</a></li>
+        
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg> <a href="https://linkedin.com/in/alanjkarp">alanjkarp</a>
+              <span class="network">(LinkedIn)</span>
+            </li>
+          
+      </ul>
+    </header>
+   
+      <section id="work">
+        <h3>Work</h3>
+        <div class="stack">
+          
+              <article>
+                <header>
+                  <h4>AI Automation Consultant</h4>
+                  <div class="meta">
+                    
+                          <div>
+                            <strong><a href="https://syrp.ai">Syrup Labs AI</a></strong>
+                          </div>
+                          <div><time datetime="2026-02">Feb 2026</time> – Present <time-duration dates="2026-02|"></time-duration></div>
+                          <div>Chadds Ford, PA</div>
+                        
+                  </div>
+                </header>
+                <div class="timeline">
+                  
+                      <div>
+                        
+                        
+                        
+                          <ul>
+                            <li><p>Designed and deployed AI concierge and intake systems for active clients including website assistants, event signup flows, and structured inquiry routing; clients gained first-ever lead tracking and automated follow-up.</p></li><li><p>Built parent/subagent architectures with prompt guardrails, FAQ handling, escalation logic, and intent separation between support and qualified lead triggers.</p></li><li><p>Implemented low-code automation pipelines using GoHighLevel, Google Sheets, Gmail, and website widgets to capture submissions and route qualified leads.</p></li><li><p>Created live pilot environments including hosted landing pages, QR-based event capture, and end-to-end demo environments.</p></li><li><p>Led full engagement lifecycle: discovery, scope, pricing, prompt iteration, testing, and phased rollout with ROI tied to admin time saved and lead capture volume.</p></li>
+                          </ul>
+                        
+                      </div>
+                    
+                </div>
+              </article>
+            
+              <article>
+                <header>
+                  <h4>DwyerOmega</h4>
+                  <div class="meta">
+                    
+                          
+                          <div><time-duration dates="2024-01|2026-02|2021-04|2024-01"></time-duration></div>
+                        
+                  </div>
+                </header>
+                <div class="timeline">
+                  
+                      <div>
+                        
+                          <div>
+                            <h5>Lead Business Analyst</h5>
+                            <div class="meta">
+                              <div><time datetime="2024-01">Jan 2024</time> – <time datetime="2026-02">Feb 2026</time> <time-duration dates="2024-01|2026-02"></time-duration></div>
+                              <div>Chadds Ford, PA</div>
+                            </div>
+                          </div>
+                        
+                        
+                        
+                          <ul>
+                            <li><p>Managed program execution for six acquisitions and consolidations valued at $800M+ into core ERP/MRP landscape, standardizing KPIs for repeatable integration.</p></li><li><p>Owned enterprise reporting governance and reconciliation across global orders, sales, pricing, quality, and inventory.</p></li><li><p>Oversaw 15-20 resource offshore vendor team including tasking, prioritization, and delivery tracking.</p></li><li><p>Served as Global Admin for Jira and Confluence; deployed AI-assisted knowledge management in Confluence.</p></li><li><p>Led greenfield implementation planning for AMS and Microsoft Fabric with external consulting partner.</p></li><li><p>Integrated Salesforce, Hybris, and GA4 with ERP, AMS, and Fabric enabling funnel visibility and pricing data.</p></li><li><p>Built repeatable data-forensics workflow using Power Query, DAX Studio, and KNIME.</p></li>
+                          </ul>
+                        
+                      </div>
+                    
+                      <div>
+                        
+                          <div>
+                            <h5>Senior Manufacturing Engineer</h5>
+                            <div class="meta">
+                              <div><time datetime="2021-04">Apr 2021</time> – <time datetime="2024-01">Jan 2024</time> <time-duration dates="2021-04|2024-01"></time-duration></div>
+                              <div>Swedesboro, NJ</div>
+                            </div>
+                          </div>
+                        
+                        
+                        
+                          <ul>
+                            <li><p>Designed and executed $2M+ in automation and robotics-driven capital projects.</p></li><li><p>Reduced on-hand inventory by 75% through analytics and predictive planning.</p></li><li><p>Led Lean and continuous improvement initiatives including Kaizen events.</p></li><li><p>Built KPI dashboards for operations, engineering, and supply chain.</p></li>
+                          </ul>
+                        
+                      </div>
+                    
+                </div>
+              </article>
+            
+              <article>
+                <header>
+                  <h4>Production Manager</h4>
+                  <div class="meta">
+                    
+                          <div>
+                            <strong>Copperweld</strong>
+                          </div>
+                          <div><time datetime="2020-11">Nov 2020</time> – <time datetime="2021-04">Apr 2021</time> <time-duration dates="2020-11|2021-04"></time-duration></div>
+                          <div>Pennsauken, NJ</div>
+                        
+                  </div>
+                </header>
+                <div class="timeline">
+                  
+                      <div>
+                        
+                        
+                        
+                          <ul>
+                            <li><p>Managed 40+ employees across 14+ production lines in 24/7 environment.</p></li><li><p>Contributed to $3M+ annualized labor savings through workflow redesign and line balancing.</p></li>
+                          </ul>
+                        
+                      </div>
+                    
+                </div>
+              </article>
+            
+              <article>
+                <header>
+                  <h4>Process & Manufacturing Engineer</h4>
+                  <div class="meta">
+                    
+                          <div>
+                            <strong>Selit North America</strong>
+                          </div>
+                          <div><time datetime="2018-10">Oct 2018</time> – <time datetime="2020-11">Nov 2020</time> <time-duration dates="2018-10|2020-11"></time-duration></div>
+                          <div>Plattsburgh, NY</div>
+                        
+                  </div>
+                </header>
+                <div class="timeline">
+                  
+                      <div>
+                        
+                        
+                        
+                          <ul>
+                            <li><p>Spearheaded startup of $20M sister facility near Atlanta including full plant design and commissioning.</p></li><li><p>Day-to-day technical lead for 30+ FTE production team.</p></li>
+                          </ul>
+                        
+                      </div>
+                    
+                </div>
+              </article>
+            
+              <article>
+                <header>
+                  <h4>Process Engineer</h4>
+                  <div class="meta">
+                    
+                          <div>
+                            <strong>Toray Plastics</strong>
+                          </div>
+                          <div><time datetime="2017-05">May 2017</time> – <time datetime="2018-05">May 2018</time> <time-duration dates="2017-05|2018-05"></time-duration></div>
+                          <div>Front Royal, VA</div>
+                        
+                  </div>
+                </header>
+                <div class="timeline">
+                  
+                      <div>
+                        
+                        
+                        
+                          <ul>
+                            <li><p>Increased line speeds by average 60 meters per hour generating $1M+ annualized revenue impact.</p></li>
+                          </ul>
+                        
+                      </div>
+                    
+                </div>
+              </article>
+            
+        </div>
+      </section>
+      
+      <section id="education">
+        <h3>Education</h3>
+        <div class="stack">
+          
+              <article>
+                <header>
+                  <h4>Villanova University</h4>
+                  <div class="meta">
+                    <div>MBA in <strong>Strategic Management, Analytics & AI/ML</strong></div>
+                    <div><time datetime="2023">Jan 2023</time> – <time datetime="2025">Jan 2025</time> <time-duration dates="2023|2025"></time-duration></div>
+                  </div>
+                </header>
+                
+                  <h5>Courses</h5>
+                  <ul>
+                    <li><p>Beta Gamma Sigma Honor Society</p></li>
+                  </ul>
+                
+              </article>
+            
+              <article>
+                <header>
+                  <h4>University of Maryland Baltimore County</h4>
+                  <div class="meta">
+                    <div>B.S. in <strong>Chemical Engineering</strong></div>
+                    <div><time datetime="2010">Jan 2010</time> – <time datetime="2016">Jan 2016</time> <time-duration dates="2010|2016"></time-duration></div>
+                  </div>
+                </header>
+                
+              </article>
+            
+        </div>
+      </section>
+    
+          
+      <section id="certificates">
+        <h3>Certificates</h3>
+        <div class="stack">
+          
+              <article>
+                <header>
+                  <h4>APICS CSCP</h4>
+                  <div class="meta">
+                     
+                  </div>
+                </header>
+              </article>
+            
+              <article>
+                <header>
+                  <h4>Atlassian Agile Project Management Professional</h4>
+                  <div class="meta">
+                     
+                  </div>
+                </header>
+              </article>
+            
+              <article>
+                <header>
+                  <h4>Google Cybersecurity Professional</h4>
+                  <div class="meta">
+                     
+                  </div>
+                </header>
+              </article>
+            
+              <article>
+                <header>
+                  <h4>Lean Six Sigma Green Belt</h4>
+                  <div class="meta">
+                    <div>Issued by <strong>Drexel University</strong></div> 
+                  </div>
+                </header>
+              </article>
+            
+              <article>
+                <header>
+                  <h4>ISO 9001 Foundation</h4>
+                  <div class="meta">
+                     
+                  </div>
+                </header>
+              </article>
+            
+        </div>
+      </section>
+    
+         
+      <section id="skills">
+        <h3>Skills</h3>
+        <div class="grid-list">
+          
+              <div>
+                <h4>ERP/MRP Systems</h4>
+                
+                  <ul class="tag-list">
+                    <li>SyteLine</li><li>SAP S/4HANA</li><li>QAD</li><li>AMS</li>
+                  </ul>
+                
+              </div>
+            
+              <div>
+                <h4>Data & Analytics</h4>
+                
+                  <ul class="tag-list">
+                    <li>Microsoft Fabric</li><li>Power BI</li><li>Tableau</li><li>SQL</li><li>Python</li><li>R</li><li>DAX Studio</li><li>KNIME</li>
+                  </ul>
+                
+              </div>
+            
+              <div>
+                <h4>CRM & MarTech</h4>
+                
+                  <ul class="tag-list">
+                    <li>Salesforce</li><li>Hybris</li><li>GA4</li><li>GoHighLevel</li>
+                  </ul>
+                
+              </div>
+            
+              <div>
+                <h4>AI & Automation</h4>
+                
+                  <ul class="tag-list">
+                    <li>AI Agent Design</li><li>Prompt Engineering</li><li>Knowledge Base Design</li><li>Low-Code Automation</li><li>n8n</li>
+                  </ul>
+                
+              </div>
+            
+              <div>
+                <h4>Program & Project Management</h4>
+                
+                  <ul class="tag-list">
+                    <li>Jira</li><li>Confluence</li><li>Agile</li><li>Scrum</li><li>Lean Six Sigma</li><li>APICS CSCP</li>
+                  </ul>
+                
+              </div>
+            
+        </div>
+      </section>
+     
+         
+      </body>
+    </html>
