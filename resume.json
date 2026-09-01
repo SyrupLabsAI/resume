@@ -34,9 +34,9 @@
       "url": "https://syrp.ai",
       "startDate": "2026-02",
       "location": "Chadds Ford, PA",
-      "summary": "AI automation consultancy building and deploying agentic systems, lead capture workflows, and customer support automation for small and local businesses; three active commercial clients across retail, hospitality, and local services.",
+      "summary": "AI automation consultancy building and deploying agentic systems, lead capture workflows, and customer support automation for small and local businesses. Built AI automation systems for retail, hospitality, and local services use cases.",
       "highlights": [
-        "Designed and deployed AI concierge and intake systems for active clients including website assistants, event/community signup flows, and structured inquiry routing; clients gained first-ever lead tracking, automated follow-up, and analytics visibility into inquiry volume and source.",
+        "Designed and deployed AI concierge and intake systems including website assistants, event and community signup flows, and structured inquiry routing, providing lead tracking, automated follow-up, and analytics visibility into inquiry volume and source.",
         "Built parent/subagent architectures grounded in business-specific knowledge bases, with prompt guardrails, FAQ handling, escalation logic, and intent separation between general support and qualified lead triggers.",
         "Implemented low-code automation pipelines using GoHighLevel, Google Sheets, Gmail, and website widgets to capture submissions, trigger notifications, log inquiries, track QR and source campaigns, and route qualified leads into client workflows.",
         "Created live pilot environments including hosted landing pages, QR-based event capture, AI-assisted customer support flows, and end-to-end demo environments for stakeholder review and client onboarding.",
@@ -122,7 +122,7 @@
       "position": "Co-Founder and Operator",
       "url": "https://littlethistlefarms.com",
       "startDate": "2023-01",
-      "summary": "1-acre CSA and farm LLC in Chadds Ford, PA; 55 member subscriptions for current season; 1.1K Instagram following; active local business partnerships."
+      "summary": "2-acre organic heirloom farm LLC in Chadds Ford, PA, growing garlic, flowers, and herbs and producing heirloom canned and pickled goods; active local business partnerships."
     }
   ],
   "education": [
