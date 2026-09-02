@@ -2,7 +2,7 @@
   "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
   "basics": {
     "name": "Alan Karp",
-    "label": "Enterprise Transformation & AI Operations Leader",
+    "label": "AI Program Manager",
     "email": "alanjacobkarp@gmail.com",
     "phone": "601-389-7206",
     "url": "https://syrp.ai",
@@ -30,11 +30,11 @@
   "work": [
     {
       "name": "Syrup Labs AI (syrp.ai)",
-      "position": "Founder & AI Automation Consultant",
+      "position": "AI Program Manager",
       "url": "https://syrp.ai",
       "startDate": "2026-02",
       "location": "Chadds Ford, PA",
-      "summary": "AI automation consultancy building and deploying agentic systems, lead capture workflows, and customer support automation for small and local businesses. Built AI automation systems for retail, hospitality, and local services use cases.",
+      "summary": "Title of record: Founder & AI Automation Consultant. AI automation consultancy building and deploying agentic systems, lead capture workflows, and customer support automation for small and local businesses. Built AI automation systems for retail, hospitality, and local services use cases.",
       "highlights": [
         "Designed and deployed AI concierge and intake systems including website assistants, event and community signup flows, and structured inquiry routing, providing lead tracking, automated follow-up, and analytics visibility into inquiry volume and source.",
         "Built parent/subagent architectures grounded in business-specific knowledge bases, with prompt guardrails, FAQ handling, escalation logic, and intent separation between general support and qualified lead triggers.",
@@ -45,11 +45,11 @@
     },
     {
       "name": "DwyerOmega",
-      "position": "Lead Business Analyst and Transformation Program Lead",
+      "position": "AI Program Manager",
       "startDate": "2024-01",
       "endDate": "2026-02",
       "location": "Chadds Ford, PA",
-      "summary": "PE-backed industrial platform; enterprise transformation spanning ERP/MRP, AMS, CRM/MarTech, and enterprise BI across Operations, Finance, Commercial, IT, and Supply Chain.",
+      "summary": "Title of record: AI & Enterprise Transformation Manager. PE-backed industrial platform; enterprise transformation spanning ERP/MRP, AMS, CRM/MarTech, and enterprise BI across Operations, Finance, Commercial, IT, and Supply Chain.",
       "highlights": [
         "Managed program and project execution for six acquisitions and business consolidations valued at $800M+ into the core ERP/MRP and reporting landscape, standardizing KPIs and processes for repeatable integration execution.",
         "Owned enterprise reporting governance and reconciliation across global orders, sales, pricing, quality, and inventory, supporting decisions tied to pricing, margin, and working capital.",
